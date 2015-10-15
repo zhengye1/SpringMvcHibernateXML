@@ -22,7 +22,7 @@ public class HomeController {
 	/**
 	 * Handles requests for the application home page
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = {"","/"}, method = RequestMethod.GET)
 	public ModelAndView home(){
 		logger.info("Calling home method in HomeController.java");
 		List<User> listUsers = userDao.list();

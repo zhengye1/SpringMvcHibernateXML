@@ -2,6 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <html>
 <head>
@@ -12,7 +13,7 @@
 	<div align="center">
 		<h1>Users List</h1>
 		<h2>
-			<a href="/new">New User</a>
+			<a href="${contextPath }/new">New User</a>
 		</h2>
 
 		<table border="1">
@@ -29,8 +30,8 @@
 					<td>${status.index + 1}</td>
 					<td>${user.username}</td>
 					<td>${user.email}</td>
-					<td><a href="/edit?id=${user.id}">Edit</a>
-						&nbsp;&nbsp;&nbsp;&nbsp; <a href="/delete?id=${user.id}">Delete</a>
+					<td><a href="${contextPath }/edit?id=${user.id}">Edit</a>
+						&nbsp;&nbsp;&nbsp;&nbsp; <a href="${contextPath }/delete?id=${user.id}">Delete</a>
 					</td>
 				</tr>
 			</c:forEach>

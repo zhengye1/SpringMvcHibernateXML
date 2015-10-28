@@ -2,6 +2,14 @@ package com.vincent.spring.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="USERS")
 public class User implements Serializable {
 
 	/**
@@ -16,6 +24,9 @@ public class User implements Serializable {
 	
 	
 	// Getter and Setter
+	@Id
+	@GeneratedValue
+	@Column(name="USER_ID")
 	public int getId() {
 		return id;
 	}

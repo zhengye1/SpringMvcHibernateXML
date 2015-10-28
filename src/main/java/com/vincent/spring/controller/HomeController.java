@@ -1,4 +1,4 @@
-package com.vincent.spring;
+package com.vincent.spring.controller;
 
 import java.util.List;
 
@@ -30,16 +30,17 @@ public class HomeController {
 	 * Handles requests for the application home page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home(){
-		logger.info("Calling home method in HomeController.java");
+	public ModelAndView handleRequest() throws Exception{
+		logger.info("Calling handleRequest method in HomeController.java");
 		List<User> listUsers = userDao.list();
-		ModelAndView model = new ModelAndView("home");
+		ModelAndView model = new ModelAndView("UserList");
 		model.addObject("userList",listUsers);
 		return model;
 	}
 
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView newUser() {
+		logger.info("Calling newUser method in HomeController.java");
 		ModelAndView model = new ModelAndView("UserForm");
 		model.addObject("user", new User());
 		return model;      

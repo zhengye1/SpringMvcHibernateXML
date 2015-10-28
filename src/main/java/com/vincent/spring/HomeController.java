@@ -29,13 +29,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home(){
 		logger.info("Calling home method in HomeController.java");
-		if (userDao == null){
-			logger.error("userDao is empty");
-			return null;
-		}
-		else{
-			logger.info("userDAO is not empty?");
-		}
 		List<User> listUsers = userDao.list();
 		ModelAndView model = new ModelAndView("home");
 		model.addObject("userList",listUsers);
